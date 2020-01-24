@@ -40,23 +40,23 @@ async function main() {
     })
   );
   console.log("Starting Server and connecting to the database...");
-  app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
-  });
-  // mongoose
-  //   .connect(
-  //     "mongodb+srv://proffd:vx1800@first-cluster-vq17o.mongodb.net/events-db?retryWrites=true&w=majority",
-  //     {
-  //       useNewUrlParser: true,
-  //       useUnifiedTopology: true
-  //     }
-  //   )
-  //   .then(results => {
-  //     app.listen(3000, () => {
-  //       console.log(`Server is listening on port ${PORT}`);
-  //     });
-  //   })
-  //   .catch(err => console.log(err));
+  // app.listen(PORT, () => {
+  //   console.log(`Server is listening on port ${PORT}`);
+  // });
+  mongoose
+    .connect(
+      "mongodb+srv://proffd:vx1800@first-cluster-vq17o.mongodb.net/events-db?retryWrites=true&w=majority",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      }
+    )
+    .then(results => {
+      app.listen(3000, () => {
+        console.log(`Server is listening on port ${PORT}`);
+      });
+    })
+    .catch(err => console.log(err));
 }
 
 main();
