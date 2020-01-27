@@ -51,12 +51,14 @@ async function main() {
     )
     .then(results => {
       // app.listen(3000, () => {
-      console.log(`DB CONNECTED Server is listening on port ${PORT}`);
+      console.log(`Connected DB Server is listening on port ${PORT}`);
       // });
     })
     .catch(err => console.log(err));
+
+  app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+  });
 }
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
-});
+
 main();
